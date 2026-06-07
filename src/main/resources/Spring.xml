@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+  <bean class="org.example.Car" id="mycar">
+      <constructor-arg value="sedan">
+
+      </constructor-arg>
+      <constructor-arg ref="engine1" ></constructor-arg>
+
+  </bean>
+
+    <bean class="org.example.Car" id="mycar2">
+        <constructor-arg value="suv">
+
+        </constructor-arg>
+        <constructor-arg ref="engine2" ></constructor-arg>
+
+    </bean>
+
+    <bean class="org.example.Engine" id="engine1">
+       <constructor-arg value="toyota">
+
+       </constructor-arg>
+
+        <constructor-arg value = "100">
+
+        </constructor-arg>
+    </bean>
+
+    <bean class="org.example.Engine" id="engine2">
+        <constructor-arg value="sedan">
+
+        </constructor-arg>
+
+        <constructor-arg value = "100">
+
+        </constructor-arg>
+    </bean>
+
+
+</beans>
