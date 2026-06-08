@@ -12,11 +12,26 @@ public class Main {
         Engine engine2 = new Engine("v10",500);
         Car car = new Car("SUV");*/
 
+    //Initializing applicationContext with the xml based configuration
 
-       /* ApplicationContext applicationContext = new ClassPathXmlApplicationContext("Spring.xml");*/
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfig.class);
+       /* ApplicationContext applicationContext = new ClassPathXmlApplicationContext("Spring.xml");
         Car car = applicationContext.getBean("mycar",Car.class);
         Car car2 = applicationContext.getBean("mycar2",Car.class);
-        car.drive();car2.drive();
+        car.drive();car2.drive();*/
+
+
+    //Initializing applicationContext with the java based configuration
+
+       /* ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfig.class);
+        Car car = applicationContext.getBean("mycar",Car.class);
+        Car car2 = applicationContext.getBean("mycar2",Car.class);
+        car.drive();car2.drive();*/
+
+
+    //Initializing applicationContext with the annotation based configuration
+
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationBeanConfig.class);
+        Car car = applicationContext.getBean(Car.class);
+        car.drive();
     }
 }

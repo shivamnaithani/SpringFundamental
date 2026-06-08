@@ -1,12 +1,16 @@
 package org.example;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Engine {
 
     private String engineType;
 
     private int enginePower;
 
-    public Engine(String engineType , int enginePower){
+    public Engine(@Value("${engine.engineType}") String engineType , @Value("${engine.enginePower}") int enginePower){
         this.engineType = engineType;
         this.enginePower = enginePower;
 
