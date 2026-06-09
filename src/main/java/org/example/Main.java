@@ -30,8 +30,17 @@ public class Main {
 
     //Initializing applicationContext with the annotation based configuration
 
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationBeanConfig.class);
+       /* ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationBeanConfig.class);
         Car car = applicationContext.getBean(Car.class);
-        car.drive();
+        car.drive();*/
+
+
+    //creating multiple type of a car example HybridCar FunkyCar
+
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnnotationBeanConfig.class);
+        Car hybridCar = applicationContext.getBean(HybridCar.class);
+        Car funkyCar = applicationContext.getBean(FunkyCar.class);
+        hybridCar.drive();
+        funkyCar.drive();
     }
 }
